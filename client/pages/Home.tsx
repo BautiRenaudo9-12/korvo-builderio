@@ -79,7 +79,7 @@ export default function Home() {
       {/* Business Carousel */}
       <BusinessCarousel
         businesses={mockWalletCards}
-        onViewAll={() => setShowListView(true)}
+        onViewAll={goToAllBusinesses}
       />
 
       
