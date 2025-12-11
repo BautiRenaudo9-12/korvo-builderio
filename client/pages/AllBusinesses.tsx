@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import { mockWalletCards } from '@/lib/data';
-import { Search, Zap, TrendingUp, ArrowUp } from 'lucide-react';
-import { BusinessDetailView } from '@/components/BusinessDetailView';
+import { Search, Zap, TrendingUp, ArrowUp, ArrowLeft } from 'lucide-react';
 import { WalletCard } from '@/types';
 
 type SortOption = 'name' | 'points' | 'stamps';
