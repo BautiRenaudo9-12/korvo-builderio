@@ -117,6 +117,18 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
             </div>
 
             <button
+              onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium whitespace-nowrap ${
+                showOnlyFavorites
+                  ? 'bg-red-500/20 border border-red-500/50 text-red-400'
+                  : 'bg-white/5 border border-white/10 text-neutral-400 hover:bg-white/10 hover:border-white/20'
+              }`}
+            >
+              <Heart size={14} />
+              <span className="hidden md:inline">Favoritos</span>
+            </button>
+
+            <button
               onClick={() => setShowFilters(!showFilters)}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-xs md:text-sm font-medium whitespace-nowrap ${
                 showFilters
