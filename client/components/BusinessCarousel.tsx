@@ -1,5 +1,6 @@
 import { WalletCard } from '@/types';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
+import { useFavorites } from '@/hooks/use-favorites';
 
 interface BusinessCarouselProps {
   businesses: WalletCard[];
