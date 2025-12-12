@@ -179,9 +179,27 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
                     <div className="flex-1 min-w-0">
                       {/* Title & Address */}
                       <div className="mb-3">
-                        <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-amber-400 transition-colors">
-                          {business.shop}
-                        </h3>
+                        <div className="flex items-start justify-between gap-2 mb-1">
+                          <h3 className="text-base md:text-lg font-semibold text-white truncate group-hover:text-amber-400 transition-colors">
+                            {business.shop}
+                          </h3>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleFavorite(business.id);
+                            }}
+                            className="flex-shrink-0 p-1 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
+                          >
+                            <Heart
+                              size={16}
+                              className={`transition-all ${
+                                isFavorite(business.id)
+                                  ? 'fill-red-500 text-red-500'
+                                  : 'text-white/50 hover:text-white/80'
+                              }`}
+                            />
+                          </button>
+                        </div>
                         <p className="text-xs md:text-sm text-neutral-400 line-clamp-2">
                           {business.address}
                         </p>
