@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, User } from 'lucide-react';
+import { ChevronLeft, User, Bird } from 'lucide-react';
 
 interface HeaderProps {
   isDetailRoute: boolean;
