@@ -10,6 +10,7 @@ export const useNavigation = () => {
   const goToProfile = useCallback(() => navigate('/profile'), [navigate]);
   const goToActivity = useCallback(() => navigate('/activity'), [navigate]);
   const goToStoreDetail = useCallback((id: number) => navigate(`/store/${id}`), [navigate]);
+  const goToAllBusinesses = useCallback(() => navigate('/businesses'), [navigate]);
 
   return {
     goToHome,
@@ -18,5 +19,6 @@ export const useNavigation = () => {
     goToProfile,
     goToActivity,
     goToStoreDetail,
+    goToAllBusinesses,
   };
 };

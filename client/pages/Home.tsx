@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { useNavigation } from '@/hooks/use-navigation';
 import { mockUser, mockWalletCards } from '@/lib/data';
 import { Gift, History } from 'lucide-react';
 import { BusinessCarousel } from '@/components/BusinessCarousel';
-import { BusinessListView } from '@/components/BusinessListView';
 
 export default function Home() {
-  const { goToWallet, goToActivity } = useNavigation();
-  const [showListView, setShowListView] = useState(false);
+  const { goToWallet, goToActivity, goToAllBusinesses } = useNavigation();
 
   return (
     <div className="px-6 md:px-8 pt-4 md:pt-8 animate-fade-in">
@@ -82,7 +79,7 @@ export default function Home() {
       {/* Business Carousel */}
       <BusinessCarousel
         businesses={mockWalletCards}
-        onViewAll={() => setShowListView(true)}
+        onViewAll={goToAllBusinesses}
       />
 
       
