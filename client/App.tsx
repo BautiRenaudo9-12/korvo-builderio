@@ -32,18 +32,26 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/wallet" element={<Wallet />} />
-            <Route path="/activity" element={<Activity />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/store/:id" element={<StoreDetail />} />
-            <Route path="/businesses" element={<AllBusinesses />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          {/* User Routes */}
+          <Route element={<Layout><Home /></Layout>} path="/" />
+          <Route element={<Layout><Wallet /></Layout>} path="/wallet" />
+          <Route element={<Layout><Activity /></Layout>} path="/activity" />
+          <Route element={<Layout><Profile /></Layout>} path="/profile" />
+          <Route element={<Layout><Explore /></Layout>} path="/explore" />
+          <Route element={<Layout><StoreDetail /></Layout>} path="/store/:id" />
+          <Route element={<Layout><AllBusinesses /></Layout>} path="/businesses" />
+
+          {/* Business Routes */}
+          <Route element={<BusinessLayout><BusinessDashboard /></BusinessLayout>} path="/business/dashboard" />
+          <Route element={<BusinessLayout><BusinessRewards /></BusinessLayout>} path="/business/rewards" />
+          <Route element={<BusinessLayout><BusinessCustomers /></BusinessLayout>} path="/business/customers" />
+          <Route element={<BusinessLayout><BusinessPromotions /></BusinessLayout>} path="/business/promotions" />
+          <Route element={<BusinessLayout><BusinessSettings /></BusinessLayout>} path="/business/settings" />
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
