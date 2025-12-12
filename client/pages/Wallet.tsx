@@ -1,6 +1,7 @@
 import { useNavigation } from '@/hooks/use-navigation';
 import { mockWalletCards } from '@/lib/data';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
+import { useFavorites } from '@/hooks/use-favorites';
 
 export default function Wallet() {
   const { goToStoreDetail } = useNavigation();
