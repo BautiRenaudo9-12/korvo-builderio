@@ -5,6 +5,7 @@ import { useFavorites } from '@/hooks/use-favorites';
 
 export default function Wallet() {
   const { goToStoreDetail } = useNavigation();
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
     <div className="px-6 md:px-8 pt-4 md:pt-8 min-h-full">
