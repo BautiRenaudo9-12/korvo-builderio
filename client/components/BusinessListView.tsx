@@ -12,10 +12,12 @@ interface BusinessListViewProps {
 type SortOption = 'name' | 'points' | 'stamps';
 
 export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps) => {
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBusiness, setSelectedBusiness] = useState<WalletCard | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>('points');
   const [showFilters, setShowFilters] = useState(false);
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   const filteredAndSorted = useMemo(() => {
     let filtered = businesses.filter((b) =>
