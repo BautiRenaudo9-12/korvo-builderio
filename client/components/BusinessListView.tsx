@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import { WalletCard } from '@/types';
-import { X, Search, Filter, Zap, TrendingUp, ArrowUp } from 'lucide-react';
+import { X, Search, Filter, Zap, TrendingUp, ArrowUp, Heart } from 'lucide-react';
 import { BusinessDetailView } from './BusinessDetailView';
+import { useFavorites } from '@/hooks/use-favorites';
 
 interface BusinessListViewProps {
   businesses: WalletCard[];
