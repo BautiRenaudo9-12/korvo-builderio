@@ -20,10 +20,13 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   const filteredAndSorted = useMemo(() => {
-    let filtered = businesses.filter((b) =>
-      b.shop.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      b.address.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    let filtered = businesses.filter((b) => {
+      const matchesSearch =
+        b.shop.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        b.address.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesFavorite = !showOnlyFavorites || isFavorite(b.id);
+      return matchesSearch && matchesFavorite;
+    });
 
     filtered.sort((a, b) => {
       switch (sortBy) {
@@ -39,7 +42,7 @@ export const BusinessListView = ({ businesses, onClose }: BusinessListViewProps)
     });
 
     return filtered;
-  }, [businesses, searchQuery, sortBy]);
+  }, [businesses, searchQuery, sortBy, showOnlyFavorites, isFavorite]);
 
   if (selectedBusiness) {
     return (
