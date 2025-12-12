@@ -1,9 +1,11 @@
 import { useNavigation } from '@/hooks/use-navigation';
 import { mockWalletCards } from '@/lib/data';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
+import { useFavorites } from '@/hooks/use-favorites';
 
 export default function Wallet() {
   const { goToStoreDetail } = useNavigation();
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
     <div className="px-6 md:px-8 pt-4 md:pt-8 min-h-full">
@@ -36,7 +38,25 @@ export default function Wallet() {
                       <p className="text-[10px] md:text-xs text-neutral-400">{card.ptsBalance} Pts disponibles</p>
                     </div>
                   </div>
-                  <ChevronRight size={18} className="text-white/20 group-hover:text-white/60 transition-colors flex-shrink-0 ml-2" />
+                  <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFavorite(card.id);
+                      }}
+                      className="p-1.5 rounded-lg bg-black/40 hover:bg-black/60 transition-all"
+                    >
+                      <Heart
+                        size={16}
+                        className={`transition-all ${
+                          isFavorite(card.id)
+                            ? 'fill-red-500 text-red-500'
+                            : 'text-white/50 hover:text-white/80'
+                        }`}
+                      />
+                    </button>
+                    <ChevronRight size={18} className="text-white/20 group-hover:text-white/60 transition-colors" />
+                  </div>
                 </div>
                 <div className="w-full h-1.5 md:h-2 bg-black/40 rounded-full overflow-hidden border border-white/5">
                   <div

@@ -1,5 +1,6 @@
 import { WalletCard } from '@/types';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
+import { useFavorites } from '@/hooks/use-favorites';
 
 interface BusinessCarouselProps {
   businesses: WalletCard[];
@@ -7,6 +8,8 @@ interface BusinessCarouselProps {
 }
 
 export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProps) => {
+  const { isFavorite, toggleFavorite } = useFavorites();
+
   return (
     <div className="mb-6 md:mb-8">
       <div className="flex items-center justify-between mb-4">
@@ -34,6 +37,22 @@ export const BusinessCarousel = ({ businesses, onViewAll }: BusinessCarouselProp
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFavorite(business.id);
+                }}
+                className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm hover:bg-black/60 transition-all"
+              >
+                <Heart
+                  size={16}
+                  className={`transition-all ${
+                    isFavorite(business.id)
+                      ? 'fill-red-500 text-red-500'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                />
+              </button>
             </div>
 
             {/* Business Info */}
