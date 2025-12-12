@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, User } from 'lucide-react';
+import { ChevronLeft, User, Bird } from 'lucide-react';
 
 interface HeaderProps {
   isDetailRoute: boolean;
@@ -22,7 +22,7 @@ export const Header = ({ isDetailRoute, onBack }: HeaderProps) => {
       ) : (
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:bird" data-width="18" data-stroke-width="1.5" class="iconify text-amber-500 iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 7h.01M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path><path d="m20 7l2 .5l-2 .5M10 18v3m4-3.25V21m-7-3a6 6 0 0 0 3.84-10.61"></path></g></svg>
+            <Bird size={18} className="text-amber-500" strokeWidth={1.5} />
           </div>
           <h1 className="text-lg font-semibold tracking-tighter text-white">KORVO</h1>
         </div>

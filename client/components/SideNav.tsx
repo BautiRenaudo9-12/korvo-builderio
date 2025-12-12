@@ -16,19 +16,7 @@ export const SideNav = () => {
       {/* Logo */}
       <div className="flex items-center gap-2 mb-12">
         <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
-          <svg
-            className="w-6 h-6 text-amber-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"
-            />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="22" height="22" viewBox="0 0 24 24" data-icon="lucide:bird" data-width="18" data-stroke-width="1.5" class="iconify text-amber-500 iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 7h.01M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path><path d="m20 7l2 .5l-2 .5M10 18v3m4-3.25V21m-7-3a6 6 0 0 0 3.84-10.61"></path></g></svg>
         </div>
         <h1 className="text-2xl font-semibold tracking-tighter text-white">KORVO</h1>
       </div>
