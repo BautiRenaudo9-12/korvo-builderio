@@ -1,19 +1,24 @@
-import { Menu, X, LayoutDashboard, Gift, Users, Zap, Settings, LogOut } from 'lucide-react';
+import { Menu, X, LayoutDashboard, Users, Settings, LogOut, ChevronDown, Zap } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigation } from '@/hooks/use-navigation';
 import { useLocation } from 'react-router-dom';
 
 export const BusinessHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [benefitsExpanded, setBenefitsExpanded] = useState(false);
   const { pathname } = useLocation();
   const { navigate } = useNavigation();
 
-  const menuItems = [
+  const mainMenuItems = [
     { path: '/business/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { path: '/business/rewards', label: 'Recompensas', icon: Gift },
     { path: '/business/customers', label: 'Clientes', icon: Users },
-    { path: '/business/promotions', label: 'Promociones', icon: Zap },
     { path: '/business/settings', label: 'Configuración', icon: Settings },
+  ];
+
+  const benefitsSubItems = [
+    { path: '/business/benefits', label: 'Puntos', description: 'Configuración base' },
+    { path: '/business/benefits', label: 'Recompensas', description: 'Gestión de premios' },
+    { path: '/business/benefits', label: 'Promociones', description: 'Campañas temporales' },
   ];
 
   const isActive = (path: string) => pathname === path;
