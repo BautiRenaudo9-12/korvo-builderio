@@ -96,8 +96,6 @@ export default function BusinessRewards() {
     setFormData(null);
   };
 
-  const categories = ['Bebidas', 'Alimentos', 'Combos', 'Promocionales', 'Otros'];
-
   return (
     <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
       <div className="flex items-center justify-between mb-8">
