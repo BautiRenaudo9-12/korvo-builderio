@@ -21,7 +21,7 @@ export const BusinessSideNav = () => {
   ];
 
   const isActive = (path: string) => pathname === path;
-  const isBenefitsActive = pathname === '/business/benefits';
+  const isBenefitsActive = ['/business/points', '/business/rewards', '/business/promotions'].includes(pathname);
 
   return (
     <aside className="hidden md:flex flex-col w-64 bg-[#1a1a1a] border-r border-white/5 p-6 h-[100dvh] sticky top-0">
