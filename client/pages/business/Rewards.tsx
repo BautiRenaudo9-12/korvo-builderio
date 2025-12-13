@@ -7,7 +7,6 @@ interface EditingReward {
   name: string;
   description: string;
   cost: number;
-  category: string;
   active: boolean;
 }
 
