@@ -85,7 +85,6 @@ export default function BusinessRewards() {
       name: '',
       description: '',
       cost: 0,
-      category: '',
       active: true,
     });
     setShowForm(true);
