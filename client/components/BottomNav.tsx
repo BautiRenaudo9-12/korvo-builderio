@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Home, Wallet, Compass } from 'lucide-react';
+import { Home, Wallet, Compass, Business } from 'lucide-react';
 
 interface BottomNavProps {
   currentRoute: string;
@@ -9,7 +9,7 @@ const navItems = [
   { id: 'home', label: 'Inicio', icon: Home, path: '/' },
   { id: 'wallet', label: 'Billetera', icon: Wallet, path: '/wallet' },
   { id: 'explore', label: 'Explorar', icon: Compass, path: '/explore' },
-  { id: 'business', label: 'Business', icon: Compass, path: '/business/dashboard' },
+  { id: 'business', label: 'Business', icon: Business, path: '/business/dashboard' },
 ];
 
 export const BottomNav = ({ currentRoute }: BottomNavProps) => {
