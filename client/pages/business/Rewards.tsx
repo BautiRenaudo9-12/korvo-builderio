@@ -231,9 +231,6 @@ export default function BusinessRewards() {
                       <span className="text-amber-400 font-semibold">{reward.cost} pts</span>
                     </td>
                     <td className="px-4 md:px-6 py-4">
-                      <span className="text-xs text-neutral-400">{reward.category}</span>
-                    </td>
-                    <td className="px-4 md:px-6 py-4">
                       <span className="text-white font-medium">{reward.redeemCount}</span>
                     </td>
                     <td className="px-4 md:px-6 py-4">
