@@ -204,9 +204,6 @@ export default function BusinessRewards() {
                     Costo
                   </th>
                   <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                    Categoría
-                  </th>
-                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
                     Canjeadas
                   </th>
                   <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
