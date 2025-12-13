@@ -52,7 +52,6 @@ export default function BusinessRewards() {
                 name: formData.name,
                 description: formData.description,
                 cost: formData.cost,
-                category: formData.category,
                 active: formData.active,
               }
             : r
@@ -66,7 +65,7 @@ export default function BusinessRewards() {
           name: formData.name,
           description: formData.description,
           cost: formData.cost,
-          category: formData.category,
+          category: '',
           active: formData.active,
           redeemCount: 0,
           createdAt: new Date().toISOString().split('T')[0],
