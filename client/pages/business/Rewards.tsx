@@ -23,7 +23,6 @@ export default function BusinessRewards() {
       name: reward.name,
       description: reward.description,
       cost: reward.cost,
-      category: reward.category,
       active: reward.active,
     });
     setShowForm(true);
