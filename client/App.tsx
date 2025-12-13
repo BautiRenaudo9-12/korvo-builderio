@@ -22,6 +22,7 @@ import BusinessRewards from "./pages/business/Rewards";
 import BusinessCustomers from "./pages/business/Customers";
 import BusinessPromotions from "./pages/business/Promotions";
 import BusinessSettings from "./pages/business/Settings";
+import BusinessBenefits from "./pages/business/Benefits";
 
 const queryClient = new QueryClient();
 
