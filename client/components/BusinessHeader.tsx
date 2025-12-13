@@ -29,16 +29,13 @@ export const BusinessHeader = () => {
   };
 
   return (
-    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-black border-b border-white/10">
+    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">K</span>
+        <div className="flex items-center gap-2">
+          <div className="w-9 h-9 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/20">
+            <span className="text-amber-500 font-bold text-sm">K</span>
           </div>
-          <div>
-            <h1 className="text-white font-bold">KORVO Negocios</h1>
-            <p className="text-[10px] text-amber-500 font-semibold">Panel de Control</p>
-          </div>
+          <h1 className="text-white font-semibold">KORVO</h1>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -50,7 +47,7 @@ export const BusinessHeader = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="mt-4 space-y-2 border-t border-white/10 pt-4">
+        <nav className="mt-4 space-y-2 border-t border-white/5 pt-4">
           {menuItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.path);
@@ -61,11 +58,11 @@ export const BusinessHeader = () => {
                 onClick={() => handleNavigate(item.path)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                   active
-                    ? 'bg-amber-500/20 border border-amber-500/50 text-amber-400'
-                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+                    : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
                 }`}
               >
-                <Icon size={18} />
+                <Icon size={20} strokeWidth={1.5} />
                 {item.label}
               </button>
             );
@@ -74,9 +71,9 @@ export const BusinessHeader = () => {
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-all font-medium text-sm border-t border-white/10 mt-4 pt-4"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent transition-all font-medium text-sm"
           >
-            <LogOut size={18} />
+            <LogOut size={20} strokeWidth={1.5} />
             Volver a Usuario
           </button>
         </nav>
