@@ -22,7 +22,7 @@ export const BusinessHeader = () => {
   ];
 
   const isActive = (path: string) => pathname === path;
-  const isBenefitsActive = pathname === '/business/benefits';
+  const isBenefitsActive = ['/business/points', '/business/rewards', '/business/promotions'].includes(pathname);
 
   const handleNavigate = (path: string) => {
     navigate(path);
