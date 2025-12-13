@@ -7,7 +7,6 @@ interface EditingReward {
   name: string;
   description: string;
   cost: number;
-  category: string;
   active: boolean;
 }
 
@@ -24,7 +23,6 @@ export default function BusinessRewards() {
       name: reward.name,
       description: reward.description,
       cost: reward.cost,
-      category: reward.category,
       active: reward.active,
     });
     setShowForm(true);
@@ -54,7 +52,6 @@ export default function BusinessRewards() {
                 name: formData.name,
                 description: formData.description,
                 cost: formData.cost,
-                category: formData.category,
                 active: formData.active,
               }
             : r
@@ -68,7 +65,7 @@ export default function BusinessRewards() {
           name: formData.name,
           description: formData.description,
           cost: formData.cost,
-          category: formData.category,
+          category: '',
           active: formData.active,
           redeemCount: 0,
           createdAt: new Date().toISOString().split('T')[0],
@@ -88,7 +85,6 @@ export default function BusinessRewards() {
       name: '',
       description: '',
       cost: 0,
-      category: '',
       active: true,
     });
     setShowForm(true);
@@ -99,8 +95,6 @@ export default function BusinessRewards() {
     setEditingId(null);
     setFormData(null);
   };
-
-  const categories = ['Bebidas', 'Alimentos', 'Combos', 'Promocionales', 'Otros'];
 
   return (
     <div className="px-4 md:px-8 pt-4 md:pt-8 pb-8">
@@ -159,25 +153,6 @@ export default function BusinessRewards() {
                 />
               </div>
 
-              {/* Category */}
-              <div>
-                <label className="block text-sm text-neutral-400 mb-2">Categoría</label>
-                <select
-                  value={formData?.category || ''}
-                  onChange={(e) => setFormData({ ...formData!, category: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-amber-500/50"
-                >
-                  <option value="" disabled>
-                    Seleccionar categoría
-                  </option>
-                  {categories.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
               {/* Active Toggle */}
               <div className="flex items-center justify-between py-3 px-4 rounded-lg bg-white/5 border border-white/10">
                 <span className="text-white font-medium">Activa</span>
@@ -213,92 +188,152 @@ export default function BusinessRewards() {
         </div>
       )}
 
-      {/* Rewards Table */}
-      <div className="glass-panel rounded-lg border border-white/5 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-white/5 bg-white/[0.02]">
-                <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                  Recompensa
-                </th>
-                <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                  Costo
-                </th>
-                <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                  Categoría
-                </th>
-                <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                  Canjeadas
-                </th>
-                <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                  Estado
-                </th>
-                <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
-                  Acciones
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {rewards.map((reward, index) => (
-                <tr
-                  key={reward.id}
-                  className="border-b border-white/5 hover:bg-white/5 transition-colors animate-fade-in"
-                  style={{ animationDelay: `${index * 30}ms` }}
-                >
-                  <td className="px-4 md:px-6 py-4">
-                    <div>
-                      <p className="text-white font-medium">{reward.name}</p>
-                      <p className="text-xs text-neutral-500 line-clamp-1">{reward.description}</p>
-                    </div>
-                  </td>
-                  <td className="px-4 md:px-6 py-4">
-                    <span className="text-amber-400 font-semibold">{reward.cost} pts</span>
-                  </td>
-                  <td className="px-4 md:px-6 py-4">
-                    <span className="text-xs text-neutral-400">{reward.category}</span>
-                  </td>
-                  <td className="px-4 md:px-6 py-4">
-                    <span className="text-white font-medium">{reward.redeemCount}</span>
-                  </td>
-                  <td className="px-4 md:px-6 py-4">
-                    <button
-                      onClick={() => handleToggle(reward.id)}
-                      className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
-                        reward.active
-                          ? 'bg-emerald-500/20 text-emerald-400'
-                          : 'bg-neutral-500/20 text-neutral-400'
-                      }`}
-                    >
-                      {reward.active ? 'Activa' : 'Inactiva'}
-                    </button>
-                  </td>
-                  <td className="px-4 md:px-6 py-4">
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => handleEdit(reward)}
-                        className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
-                      >
-                        <Edit2 size={16} />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(reward.id)}
-                        className="p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500 hover:text-red-400"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </td>
+      {/* Desktop Table View */}
+      <div className="hidden md:block">
+        <div className="glass-panel rounded-lg border border-white/5 overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-white/5 bg-white/[0.02]">
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                    Recompensa
+                  </th>
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                    Costo
+                  </th>
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                    Canjeadas
+                  </th>
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                    Estado
+                  </th>
+                  <th className="px-4 md:px-6 py-4 text-left text-xs font-semibold text-neutral-400 uppercase">
+                    Acciones
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {rewards.map((reward, index) => (
+                  <tr
+                    key={reward.id}
+                    className="border-b border-white/5 hover:bg-white/5 transition-colors animate-fade-in"
+                    style={{ animationDelay: `${index * 30}ms` }}
+                  >
+                    <td className="px-4 md:px-6 py-4">
+                      <div>
+                        <p className="text-white font-medium">{reward.name}</p>
+                        <p className="text-xs text-neutral-500 line-clamp-1">{reward.description}</p>
+                      </div>
+                    </td>
+                    <td className="px-4 md:px-6 py-4">
+                      <span className="text-amber-400 font-semibold">{reward.cost} pts</span>
+                    </td>
+                    <td className="px-4 md:px-6 py-4">
+                      <span className="text-white font-medium">{reward.redeemCount}</span>
+                    </td>
+                    <td className="px-4 md:px-6 py-4">
+                      <button
+                        onClick={() => handleToggle(reward.id)}
+                        className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                          reward.active
+                            ? 'bg-emerald-500/20 text-emerald-400'
+                            : 'bg-neutral-500/20 text-neutral-400'
+                        }`}
+                      >
+                        {reward.active ? 'Activa' : 'Inactiva'}
+                      </button>
+                    </td>
+                    <td className="px-4 md:px-6 py-4">
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEdit(reward)}
+                          className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                        >
+                          <Edit2 size={16} />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(reward.id)}
+                          className="p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500 hover:text-red-400"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
-      {/* Empty State */}
+      {/* Mobile Cards View */}
+      <div className="md:hidden space-y-4">
+        {rewards.map((reward, index) => (
+          <div
+            key={reward.id}
+            className="glass-panel rounded-lg p-4 border border-white/5 hover:border-white/10 transition-all animate-fade-in"
+            style={{ animationDelay: `${index * 30}ms` }}
+          >
+            {/* Header with name and actions */}
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex-1 pr-3">
+                <h3 className="text-white font-semibold text-base">{reward.name}</h3>
+                <p className="text-sm text-neutral-500 mt-1 line-clamp-2">{reward.description}</p>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handleEdit(reward)}
+                  className="p-2 hover:bg-white/10 rounded-lg transition-colors text-amber-500 hover:text-amber-400"
+                >
+                  <Edit2 size={18} />
+                </button>
+                <button
+                  onClick={() => handleDelete(reward.id)}
+                  className="p-2 hover:bg-white/10 rounded-lg transition-colors text-red-500 hover:text-red-400"
+                >
+                  <Trash2 size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Info Grid */}
+            <div className="grid grid-cols-2 gap-3 mb-4">
+              <div className="bg-white/5 rounded-lg p-3">
+                <p className="text-xs text-neutral-500 mb-2">Costo</p>
+                <p className="text-amber-400 font-bold text-lg">{reward.cost}</p>
+                <p className="text-xs text-neutral-600">puntos</p>
+              </div>
+              <div className="bg-white/5 rounded-lg p-3">
+                <p className="text-xs text-neutral-500 mb-2">Canjeadas</p>
+                <p className="text-white font-bold text-lg">{reward.redeemCount}</p>
+              </div>
+            </div>
+
+            {/* Status */}
+            <button
+              onClick={() => handleToggle(reward.id)}
+              className={`w-full px-3 py-3 rounded-lg font-semibold transition-all text-sm ${
+                reward.active
+                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                  : 'bg-neutral-500/20 text-neutral-400 border border-neutral-500/30'
+              }`}
+            >
+              {reward.active ? '✓ Activa' : '○ Inactiva'}
+            </button>
+          </div>
+        ))}
+
+        {rewards.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-neutral-400 text-sm">No hay recompensas creadas</p>
+          </div>
+        )}
+      </div>
+
+      {/* Empty State - Desktop */}
       {rewards.length === 0 && (
-        <div className="text-center py-12">
+        <div className="hidden md:block text-center py-12">
           <p className="text-neutral-400 text-sm">No hay recompensas creadas</p>
         </div>
       )}

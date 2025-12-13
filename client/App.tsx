@@ -18,6 +18,7 @@ import StoreDetail from "./pages/StoreDetail";
 import AllBusinesses from "./pages/AllBusinesses";
 import NotFound from "./pages/NotFound";
 import BusinessDashboard from "./pages/business/Dashboard";
+import BusinessPoints from "./pages/business/Points";
 import BusinessRewards from "./pages/business/Rewards";
 import BusinessCustomers from "./pages/business/Customers";
 import BusinessPromotions from "./pages/business/Promotions";
@@ -44,6 +45,7 @@ const App = () => (
 
           {/* Business Routes */}
           <Route element={<BusinessLayout><BusinessDashboard /></BusinessLayout>} path="/business/dashboard" />
+          <Route element={<BusinessLayout><BusinessPoints /></BusinessLayout>} path="/business/points" />
           <Route element={<BusinessLayout><BusinessRewards /></BusinessLayout>} path="/business/rewards" />
           <Route element={<BusinessLayout><BusinessCustomers /></BusinessLayout>} path="/business/customers" />
           <Route element={<BusinessLayout><BusinessPromotions /></BusinessLayout>} path="/business/promotions" />

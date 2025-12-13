@@ -9,6 +9,7 @@ const navItems = [
   { id: 'home', label: 'Inicio', icon: Home, path: '/' },
   { id: 'wallet', label: 'Billetera', icon: Wallet, path: '/wallet' },
   { id: 'explore', label: 'Explorar', icon: Compass, path: '/explore' },
+  { id: 'business', label: 'Business', icon: Compass, path: '/business/dashboard' },
 ];
 
 export const BottomNav = ({ currentRoute }: BottomNavProps) => {
