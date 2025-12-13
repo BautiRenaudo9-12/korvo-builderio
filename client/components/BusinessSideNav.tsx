@@ -15,9 +15,9 @@ export const BusinessSideNav = () => {
   ];
 
   const benefitsSubItems = [
-    { path: '/business/benefits', label: 'Puntos', description: 'Configuración base' },
-    { path: '/business/benefits', label: 'Recompensas', description: 'Gestión de premios' },
-    { path: '/business/benefits', label: 'Promociones', description: 'Campañas temporales' },
+    { path: '/business/points', label: 'Puntos', description: 'Configuración base' },
+    { path: '/business/rewards', label: 'Recompensas', description: 'Gestión de premios' },
+    { path: '/business/promotions', label: 'Promociones', description: 'Campañas temporales' },
   ];
 
   const isActive = (path: string) => pathname === path;
