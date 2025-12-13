@@ -22,6 +22,7 @@ export const BusinessHeader = () => {
   ];
 
   const isActive = (path: string) => pathname === path;
+  const isBenefitsActive = pathname === '/business/benefits';
 
   const handleNavigate = (path: string) => {
     navigate(path);
@@ -52,8 +53,8 @@ export const BusinessHeader = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="mt-4 space-y-2 border-t border-white/5 pt-4">
-          {menuItems.map((item) => {
+        <nav className="mt-4 space-y-2 border-t border-white/5 pt-4 animate-fade-in">
+          {mainMenuItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.path);
 
@@ -72,6 +73,46 @@ export const BusinessHeader = () => {
               </button>
             );
           })}
+
+          {/* Gestionar Beneficios - Expandible */}
+          <div className="space-y-1">
+            <button
+              onClick={() => setBenefitsExpanded(!benefitsExpanded)}
+              className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all font-medium text-sm ${
+                isBenefitsActive
+                  ? 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+                  : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <Zap size={20} strokeWidth={1.5} />
+                Gestionar Beneficios
+              </div>
+              <ChevronDown
+                size={16}
+                className={`transition-transform ${benefitsExpanded ? 'rotate-180' : ''}`}
+              />
+            </button>
+
+            {/* Submenu Items */}
+            {benefitsExpanded && (
+              <div className="pl-6 space-y-1 animate-fade-in">
+                {benefitsSubItems.map((item) => (
+                  <button
+                    key={item.label}
+                    onClick={() => {
+                      handleNavigate(item.path);
+                      setBenefitsExpanded(false);
+                    }}
+                    className="w-full flex flex-col items-start px-4 py-2 rounded-lg transition-all hover:bg-white/5 border border-transparent text-neutral-400 hover:text-white text-left text-xs"
+                  >
+                    <span className="font-medium">{item.label}</span>
+                    <span className="text-[10px] text-neutral-600 mt-0.5">{item.description}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Logout Button */}
           <button
