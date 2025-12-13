@@ -45,10 +45,13 @@ const App = () => (
 
           {/* Business Routes */}
           <Route element={<BusinessLayout><BusinessDashboard /></BusinessLayout>} path="/business/dashboard" />
-          <Route element={<BusinessLayout><BusinessRewards /></BusinessLayout>} path="/business/rewards" />
+          <Route element={<BusinessLayout><BusinessBenefits /></BusinessLayout>} path="/business/benefits" />
           <Route element={<BusinessLayout><BusinessCustomers /></BusinessLayout>} path="/business/customers" />
-          <Route element={<BusinessLayout><BusinessPromotions /></BusinessLayout>} path="/business/promotions" />
           <Route element={<BusinessLayout><BusinessSettings /></BusinessLayout>} path="/business/settings" />
+
+          {/* Legacy Routes (kept for compatibility) */}
+          <Route element={<BusinessLayout><BusinessRewards /></BusinessLayout>} path="/business/rewards" />
+          <Route element={<BusinessLayout><BusinessPromotions /></BusinessLayout>} path="/business/promotions" />
 
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
