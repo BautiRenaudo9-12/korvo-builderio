@@ -18,11 +18,11 @@ import StoreDetail from "./pages/StoreDetail";
 import AllBusinesses from "./pages/AllBusinesses";
 import NotFound from "./pages/NotFound";
 import BusinessDashboard from "./pages/business/Dashboard";
+import BusinessPoints from "./pages/business/Points";
 import BusinessRewards from "./pages/business/Rewards";
 import BusinessCustomers from "./pages/business/Customers";
 import BusinessPromotions from "./pages/business/Promotions";
 import BusinessSettings from "./pages/business/Settings";
-import BusinessBenefits from "./pages/business/Benefits";
 
 const queryClient = new QueryClient();
 
