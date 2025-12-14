@@ -255,7 +255,7 @@
 .qr-scan-line {
   height: 2px;
   width: 100%;
-  background: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary));
   position: absolute;
   top: 0;
   left: 0;
