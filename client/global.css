@@ -194,54 +194,54 @@
    * Dark mode theme with amber accents
    */
   :root {
-  --background: 210 20% 8%;
-  --foreground: 210 15% 92%;
-
-  --card: 210 20% 10%;
-  --card-foreground: 210 15% 92%;
-
-  --popover: 210 20% 10%;
-  --popover-foreground: 210 15% 92%;
-
-  --primary: 200 65% 55%;
-  --primary-foreground: 210 20% 10%;
-
-  --secondary: 210 15% 18%;
-  --secondary-foreground: 210 15% 92%;
-
-  --muted: 210 15% 18%;
-  --muted-foreground: 210 10% 65%;
-
-  --accent: 200 70% 50%;
-  --accent-foreground: 210 20% 10%;
-
-  --destructive: 0 70% 45%;
-  --destructive-foreground: 210 15% 92%;
-
-  --border: 210 15% 20%;
-  --input: 210 15% 20%;
-  --ring: 200 65% 55%;
-
-  --success: 160 55% 45%;
-  --success-foreground: 210 15% 92%;
-
-  --info: 200 75% 60%;
-  --info-foreground: 210 20% 10%;
-
-  --warning: 38 75% 55%;
-  --warning-foreground: 210 20% 10%;
-
-  --radius: 0.5rem;
-
-  --sidebar-background: 210 18% 7%;
-  --sidebar-foreground: 210 15% 92%;
-  --sidebar-primary: 200 65% 55%;
-  --sidebar-primary-foreground: 210 20% 10%;
-  --sidebar-accent: 210 15% 18%;
-  --sidebar-accent-foreground: 210 15% 92%;
-  --sidebar-border: 210 15% 20%;
-  --sidebar-ring: 200 65% 55%;
-}
+      --background: 80 15% 8%;
+      --foreground: 80 10% 92%;
+  
+      --card: 80 15% 10%;
+      --card-foreground: 80 10% 92%;
+  
+      --popover: 80 15% 10%;
+      --popover-foreground: 80 10% 92%;
+  
+      --primary: 85 55% 50%;
+      --primary-foreground: 80 15% 10%;
+  
+      --secondary: 80 12% 18%;
+      --secondary-foreground: 80 10% 92%;
+  
+      --muted: 80 12% 18%;
+      --muted-foreground: 80 8% 65%;
+  
+      --accent: 85 60% 45%;
+      --accent-foreground: 80 15% 10%;
+  
+      --destructive: 0 65% 45%;
+      --destructive-foreground: 80 10% 92%;
+  
+      --border: 80 12% 20%;
+      --input: 80 12% 20%;
+      --ring: 85 55% 50%;
+  
+      --success: 95 60% 42%;
+      --success-foreground: 80 10% 92%;
+  
+      --info: 210 65% 60%;
+      --info-foreground: 80 15% 10%;
+  
+      --warning: 38 75% 55%;
+      --warning-foreground: 80 15% 10%;
+  
+      --radius: 0.5rem;
+  
+      --sidebar-background: 80 14% 7%;
+      --sidebar-foreground: 80 10% 92%;
+      --sidebar-primary: 85 55% 50%;
+      --sidebar-primary-foreground: 80 15% 10%;
+      --sidebar-accent: 80 12% 18%;
+      --sidebar-accent-foreground: 80 10% 92%;
+      --sidebar-border: 80 12% 20%;
+      --sidebar-ring: 85 55% 50%;
+    }
 
 
 
