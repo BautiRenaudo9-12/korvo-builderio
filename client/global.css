@@ -163,12 +163,12 @@
 .qr-scan-line {
   height: 2px;
   width: 100%;
-  background: #a855f7;
+  background: hsl(var(--primary));
   position: absolute;
   top: 0;
   left: 0;
   animation: scan 2s infinite linear;
-  box-shadow: 0 0 10px #a855f7;
+  box-shadow: 0 0 10px hsl(var(--primary));
 }
 
 @keyframes scan {
