@@ -69,7 +69,7 @@ export default function Profile() {
 
         <button
           onClick={() => alert('Cerrando sesión...')}
-          className="w-full py-3 md:py-4 text-xs md:text-sm font-medium text-red hover:text-destructive/60 transition-colors"
+          className="w-full py-3 md:py-4 text-xs md:text-sm font-medium text-red-900 hover:text-destructive/60 transition-colors"
         >
           Cerrar Sesión
         </button>
