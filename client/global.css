@@ -97,98 +97,6 @@
   --tw-gradient-to: hsl(var(--primary) / 0.8);
 }
 
-.text-success {
-  color: hsl(var(--success));
-}
-
-.text-success-400 {
-  color: hsl(var(--success) / 0.8);
-}
-
-.bg-success {
-  background-color: hsl(var(--success));
-}
-
-.bg-success-10 {
-  background-color: hsl(var(--success) / 0.1);
-}
-
-.bg-success-20 {
-  background-color: hsl(var(--success) / 0.2);
-}
-
-.border-success {
-  border-color: hsl(var(--success));
-}
-
-.border-success-30 {
-  border-color: hsl(var(--success) / 0.3);
-}
-
-.text-info {
-  color: hsl(var(--info));
-}
-
-.text-info-400 {
-  color: hsl(var(--info) / 0.8);
-}
-
-.bg-info {
-  background-color: hsl(var(--info));
-}
-
-.bg-info-10 {
-  background-color: hsl(var(--info) / 0.1);
-}
-
-.bg-info-20 {
-  background-color: hsl(var(--info) / 0.2);
-}
-
-.border-info {
-  border-color: hsl(var(--info));
-}
-
-.text-warning {
-  color: hsl(var(--warning));
-}
-
-.bg-warning {
-  background-color: hsl(var(--warning));
-}
-
-.bg-warning-10 {
-  background-color: hsl(var(--warning) / 0.1);
-}
-
-.bg-warning-20 {
-  background-color: hsl(var(--warning) / 0.2);
-}
-
-.border-warning {
-  border-color: hsl(var(--warning));
-}
-
-.text-destructive-400 {
-  color: hsl(var(--destructive) / 0.8);
-}
-
-.bg-destructive-10 {
-  background-color: hsl(var(--destructive) / 0.1);
-}
-
-.bg-destructive-20 {
-  background-color: hsl(var(--destructive) / 0.2);
-}
-
-.border-destructive-20 {
-  border-color: hsl(var(--destructive) / 0.2);
-}
-
-.border-destructive-30 {
-  border-color: hsl(var(--destructive) / 0.3);
-}
-
 /* Glassmorphism utilities */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
@@ -215,7 +123,6 @@
     opacity: 0;
     transform: translateY(10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -232,7 +139,6 @@
     transform: scale(0.95);
     opacity: 0;
   }
-
   to {
     transform: scale(1);
     opacity: 1;
@@ -246,11 +152,9 @@
 .delay-100 {
   animation-delay: 100ms;
 }
-
 .delay-200 {
   animation-delay: 200ms;
 }
-
 .delay-300 {
   animation-delay: 300ms;
 }
@@ -259,12 +163,12 @@
 .qr-scan-line {
   height: 2px;
   width: 100%;
-  background: hsl(var(--primary));
+  background: #a855f7;
   position: absolute;
   top: 0;
   left: 0;
   animation: scan 2s infinite linear;
-  box-shadow: 0 0 10px hsl(var(--primary));
+  box-shadow: 0 0 10px #a855f7;
 }
 
 @keyframes scan {
@@ -272,15 +176,12 @@
     top: 0%;
     opacity: 0;
   }
-
   10% {
     opacity: 1;
   }
-
   90% {
     opacity: 1;
   }
-
   100% {
     top: 100%;
     opacity: 0;
@@ -288,60 +189,50 @@
 }
 
 @layer base {
-
   /**
    * Tailwind CSS theme for KORVO Loyalty Wallet
    * Dark mode theme with amber accents
    */
   :root {
-      --background: 0 0% 10%;
-      --foreground: 210 15% 92%;
-  
-      --card: 0 0% 12%;
-      --card-foreground: 210 15% 92%;
-  
-      --popover: 0 0% 12%;
-      --popover-foreground: 210 15% 92%;
-  
-      --primary: 200 30% 40%;
-      --primary-foreground: 0 0% 98%;
-  
-      --secondary: 0 0% 18%;
-      --secondary-foreground: 210 15% 92%;
-  
-      --muted: 0 0% 18%;
-      --muted-foreground: 210 10% 65%;
-  
-      --accent: 200 28% 35%;
-      --accent-foreground: 0 0% 98%;
-  
-      --destructive: 0 55% 35%;
-      --destructive-foreground: 0 0% 98%;
-  
-      --border: 0 0% 20%;
-      --input: 0 0% 20%;
-      --ring: 200 30% 40%;
-  
-      --success: 145 30% 32%;
-      --success-foreground: 0 0% 98%;
-  
-      --info: 200 35% 45%;
-      --info-foreground: 0 0% 98%;
-  
-      --warning: 38 45% 45%;
-      --warning-foreground: 0 0% 98%;
-  
-      --radius: 0.5rem;
-  
-      --sidebar-background: 0 0% 9%;
-      --sidebar-foreground: 210 15% 92%;
-      --sidebar-primary: 200 30% 40%;
-      --sidebar-primary-foreground: 0 0% 98%;
-      --sidebar-accent: 0 0% 18%;
-      --sidebar-accent-foreground: 210 15% 92%;
-      --sidebar-border: 0 0% 20%;
-      --sidebar-ring: 200 30% 40%;
-    }
+    --background: 0 0% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 280 85% 65%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 280 85% 65%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 280 85% 65%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 280 85% 65%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 280 85% 65%;
+  }
 }
 
 /* Leaflet Map Styling */
