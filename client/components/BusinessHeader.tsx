@@ -60,7 +60,7 @@ export const BusinessHeader = () => {
   };
 
   return (
-    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-[#1a1a1a] border-b border-white/5">
+    <header className="md:hidden sticky top-0 z-40 px-4 py-4 bg-background border-b border-white/5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div class="flex items-center gap-2">
