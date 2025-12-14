@@ -222,6 +222,15 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 280 85% 65%;
 
+    --success: 142.7 71.8% 29.2%;
+    --success-foreground: 210 40% 98%;
+
+    --info: 217.2 91.2% 59.8%;
+    --info-foreground: 0 0% 10%;
+
+    --warning: 38.6 92.1% 50.2%;
+    --warning-foreground: 0 0% 10%;
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 10%;
