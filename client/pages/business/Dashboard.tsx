@@ -72,19 +72,19 @@ export default function BusinessDashboard() {
           </div>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-              <XAxis dataKey="month" stroke="rgba(255,255,255,0.5)" style={{ fontSize: '12px' }} />
-              <YAxis stroke="rgba(255,255,255,0.5)" style={{ fontSize: '12px' }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--foreground) / 0.1)" />
+              <XAxis dataKey="month" stroke="hsl(var(--foreground) / 0.5)" style={{ fontSize: '12px' }} />
+              <YAxis stroke="hsl(var(--foreground) / 0.5)" style={{ fontSize: '12px' }} />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: 'rgba(0,0,0,0.8)',
-                  border: '1px solid rgba(255,255,255,0.2)',
+                  backgroundColor: 'hsl(var(--background) / 0.8)',
+                  border: '1px solid hsl(var(--foreground) / 0.2)',
                   borderRadius: '8px',
                 }}
-                labelStyle={{ color: '#fff' }}
+                labelStyle={{ color: 'hsl(var(--foreground))' }}
               />
-              <Bar dataKey="earned" fill="#10b981" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="redeemed" fill="#ef4444" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="earned" fill="hsl(var(--accent) / 0.6)" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="redeemed" fill="hsl(var(--destructive) / 0.8)" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -97,9 +97,9 @@ export default function BusinessDashboard() {
           </div>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-              <XAxis dataKey="month" stroke="rgba(255,255,255,0.5)" style={{ fontSize: '12px' }} />
-              <YAxis stroke="rgba(255,255,255,0.5)" style={{ fontSize: '12px' }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--foreground) / 0.1)" />
+              <XAxis dataKey="month" stroke="hsl(var(--foreground) / 0.5)" style={{ fontSize: '12px' }} />
+              <YAxis stroke="hsl(var(--foreground) / 0.5)" style={{ fontSize: '12px' }} />
               <Tooltip
                 contentStyle={{
                   backgroundColor: 'hsl(var(--background) / 0.8)',
