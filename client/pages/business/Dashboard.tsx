@@ -83,7 +83,7 @@ export default function BusinessDashboard() {
                 }}
                 labelStyle={{ color: 'hsl(var(--foreground))' }}
               />
-              <Bar dataKey="earned" fill="hsl(var(--accent) / 0.6)" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="earned" fill="hsl(white / 0.6)" radius={[4, 4, 0, 0]} />
               <Bar dataKey="redeemed" fill="hsl(var(--destructive) / 0.8)" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
