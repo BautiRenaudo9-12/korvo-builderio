@@ -102,18 +102,18 @@ export default function BusinessDashboard() {
               <YAxis stroke="rgba(255,255,255,0.5)" style={{ fontSize: '12px' }} />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: 'rgba(0,0,0,0.8)',
-                  border: '1px solid rgba(255,255,255,0.2)',
+                  backgroundColor: 'hsl(var(--background) / 0.8)',
+                  border: '1px solid hsl(var(--foreground) / 0.2)',
                   borderRadius: '8px',
                 }}
-                labelStyle={{ color: '#fff' }}
+                labelStyle={{ color: 'hsl(var(--foreground))' }}
               />
               <Line
                 type="monotone"
                 dataKey="revenue"
-                stroke="#a855f7"
+                stroke="hsl(var(--primary))"
                 strokeWidth={2}
-                dot={{ fill: '#a855f7', r: 4 }}
+                dot={{ fill: 'hsl(var(--primary))', r: 4 }}
               />
             </LineChart>
           </ResponsiveContainer>
