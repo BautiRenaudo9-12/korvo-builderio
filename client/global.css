@@ -194,53 +194,53 @@
    * Dark mode theme with amber accents
    */
   :root {
-      --background: 45 20% 96%;
-      --foreground: 220 15% 18%;
+      --background: 24 15% 8%;
+      --foreground: 30 10% 92%;
   
-      --card: 45 20% 98%;
-      --card-foreground: 220 15% 18%;
+      --card: 24 15% 10%;
+      --card-foreground: 30 10% 92%;
   
-      --popover: 45 20% 98%;
-      --popover-foreground: 220 15% 18%;
+      --popover: 24 15% 10%;
+      --popover-foreground: 30 10% 92%;
   
-      --primary: 85 28% 38%;
-      --primary-foreground: 45 20% 98%;
+      --primary: 28 80% 55%;
+      --primary-foreground: 24 15% 10%;
   
-      --secondary: 45 15% 90%;
-      --secondary-foreground: 220 15% 22%;
+      --secondary: 24 12% 18%;
+      --secondary-foreground: 30 10% 92%;
   
-      --muted: 45 15% 90%;
-      --muted-foreground: 220 10% 45%;
+      --muted: 24 12% 18%;
+      --muted-foreground: 30 8% 65%;
   
-      --accent: 85 25% 34%;
-      --accent-foreground: 45 20% 98%;
+      --accent: 24 85% 50%;
+      --accent-foreground: 24 15% 10%;
   
-      --destructive: 0 55% 45%;
-      --destructive-foreground: 45 20% 98%;
+      --destructive: 0 70% 45%;
+      --destructive-foreground: 30 10% 92%;
   
-      --border: 45 12% 85%;
-      --input: 45 12% 85%;
-      --ring: 85 28% 38%;
+      --border: 24 12% 20%;
+      --input: 24 12% 20%;
+      --ring: 28 80% 55%;
   
-      --success: 85 30% 35%;
-      --success-foreground: 45 20% 98%;
+      --success: 145 60% 42%;
+      --success-foreground: 30 10% 92%;
   
-      --info: 210 25% 45%;
-      --info-foreground: 45 20% 98%;
+      --info: 210 65% 60%;
+      --info-foreground: 24 15% 10%;
   
-      --warning: 38 55% 50%;
-      --warning-foreground: 220 15% 18%;
+      --warning: 38 85% 55%;
+      --warning-foreground: 24 15% 10%;
   
       --radius: 0.5rem;
   
-      --sidebar-background: 45 18% 94%;
-      --sidebar-foreground: 220 15% 18%;
-      --sidebar-primary: 85 28% 38%;
-      --sidebar-primary-foreground: 45 20% 98%;
-      --sidebar-accent: 45 15% 90%;
-      --sidebar-accent-foreground: 220 15% 22%;
-      --sidebar-border: 45 12% 85%;
-      --sidebar-ring: 85 28% 38%;
+      --sidebar-background: 24 14% 7%;
+      --sidebar-foreground: 30 10% 92%;
+      --sidebar-primary: 28 80% 55%;
+      --sidebar-primary-foreground: 24 15% 10%;
+      --sidebar-accent: 24 12% 18%;
+      --sidebar-accent-foreground: 30 10% 92%;
+      --sidebar-border: 24 12% 20%;
+      --sidebar-ring: 28 80% 55%;
     }
 }
 
