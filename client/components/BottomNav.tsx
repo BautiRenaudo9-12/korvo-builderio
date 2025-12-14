@@ -16,7 +16,7 @@ export const BottomNav = ({ currentRoute }: BottomNavProps) => {
   const navigate = useNavigate();
 
   return (
-    <nav className="md:hidden glass-nav fixed bottom-0 left-0 right-0 w-full z-30 pb-safe transition-transform duration-300">
+    <nav className="md:hidden glass-nav fixed bottom-0 left-0 right-0 w-full z-30 pb-safe transition-transform bg-red-500 duration-300">
       <div className="flex justify-around items-center h-16 px-2">
         {navItems.map(({ id, label, icon: Icon, path }) => {
           const isActive = currentRoute === path;
